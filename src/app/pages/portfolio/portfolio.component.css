@@ -1,22 +1,6 @@
-.projects-s>div.slide>.image.active{
-    animation: fade 1s ease;
-    opacity:1;
-}
-
-.projects-s>div.slide>.image{
-    width:50%;
-    height: 80%;
-    background-color: black;
-    position: absolute;
-    opacity: 0;
-}
-.projects-s>div.slide>.image>img{
-    width:100%;
-    height:100%;
-}
 .projects-s{
     width: 100%;
-    height: 150vh;
+    height: 100vh;
     background: url("../../assets/images/tablet.jpg") no-repeat center fixed;
     background-size: cover;
     z-index: 0;
@@ -25,36 +9,44 @@
 .projects-s::before{
     content: "";
     width: 100%;
-    min-height: 150%;
+    min-height: 100%;
     background-color: #000000b7;
     filter: blur(5px);
     position: absolute;
     z-index:0;
 }
+.projects-s>div.slide>.image.active{
+    animation: fade 1s ease;
+    opacity:1;
+    display: flex;
+}
 
+.projects-s>div.slide>.image{
+    width:100%;
+    height: 80%;
+    background-color: black;
+z-index: 1;
+    opacity: 0;
+    display: none;
+}
 
 .projects-s>div.slide{
     padding: 35px;
     opacity: 1;
-    width:50%;
+    width:80%;
     height:50%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
 }
 
 .projects-s>h1{
-    height:20%;
     padding: 10px 0px;
 }
 
 .projects-s>div.slide>button{
     border: none;
-    background-color: #01010167;
+    background-color: #010101;
     position: absolute;
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     justify-self: center;
     z-index: 1;
@@ -62,20 +54,30 @@
 
 .projects-s>div.slide>button:hover{
     border: none;
-    background-color: #000000cc; 
+    background-color: #ffffff;
 }
-
+.projects-s>div.slide>button>.fa-chevron-left,
+.projects-s>div.slide>button>.fa-chevron-right{
+    display: block;
+    font-size: 2em;
+    font-weight: 600;
+    color:snow;
+}
+.projects-s>div.slide>button>.fa-chevron-left:hover,
+.projects-s>div.slide>button>.fa-chevron-right:hover{
+    font-size: 2em;
+    font-weight: 600;
+    color:goldenrod;
+}
 .projects-s>div.slide>button:active{
     border: none;
-    background-color: #18161600; 
+    background-color: #ffffff;
 }
 
 .left-arrow{ left: 0;}
 
 .right-arrow{right: 0;}
 
-.fa-chevron-left,.fa-chevron-right{
-    font-size: 2em;
-    font-weight: 600;
-    color:snow;
+.list-projects{
+    height: 50vh;
 }

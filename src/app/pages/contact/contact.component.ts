@@ -9,7 +9,7 @@ import { error } from 'console';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
-
+action :string = "https://formspree.io/f/xkndkvgg"
 
 
 }
