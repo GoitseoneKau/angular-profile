@@ -204,7 +204,8 @@ const submitForm = (event)=>{
 }
 
 
- //JS for sliding images
+window.onload=()=>{
+   //JS for sliding images
  const sliders = document.querySelectorAll(".projects-s>div.slide>.image");
  const btnLeft = document.getElementById("left");
  const btnRight = document.getElementById("right");
@@ -259,3 +260,4 @@ const submitForm = (event)=>{
      }
    });  
  });
+}

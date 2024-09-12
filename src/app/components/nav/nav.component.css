@@ -37,6 +37,39 @@ ul li a{
 
 
 
+
+nav .sidenav-trigger {
+    margin: 0 ;
+}
+
+
+
+button.sidenav-trigger:active,button.sidenav-trigger:focus,button.sidenav-trigger:hover{
+background-color: white;
+color: black;
+}
+
+
+
+#sidebar > li:nth-child(1) > button > span:hover
+{
+    background-color: white;
+    color: black;
+}
+button > span > i:hover
+{
+    color: black;
+}
+ button > span > i
+{
+    color: white;
+}
+
+button.sidenav-close:focus,button.sidenav-close:active,li>button.sidenav-close:hover{
+    background-color: white;
+    color: black;
+}
+
 .sidenav li > a{
     padding: 0 20px;
 }
@@ -56,11 +89,3 @@ nav ul a:hover {
     color:gold
 }
 
-
-nav .sidenav-trigger {
-    margin: 0 ;
-}
-
-.sidenav-trigger i:hover{
-    background-color: rgba(0, 0, 0, 0.661);
-}

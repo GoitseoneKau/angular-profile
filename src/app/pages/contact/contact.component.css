@@ -19,6 +19,35 @@
     z-index:0;
 }
 
+@media (min-width:1024px) {
+  .contact{
+    font-family: 'Avenir Next Condensed';
+    height: 120dvh;
+    background-color: rgba(0, 0, 0, 0.749);
+    background: url("../../assets/images/tablet.jpg") no-repeat center fixed;
+    background-size: cover;
+    z-index: -1;
+}
+
+.contact::before{
+  content: "";
+  width: 100%;
+  min-height: 120%;
+  background-color: #000000b7;
+  filter: blur(5px);
+  position: absolute;
+  z-index:0;
+}
+
+.location-sec{
+  height:130vh;
+
+}
+.form-sec{
+  height: 130vh;
+}
+}
+
 .form-sec{
     flex: 2 100%;
     height: 120vh;
@@ -33,12 +62,8 @@
 
 .location-sec{
     flex: 2 100%;
-    height:100%;
     height:80vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 
