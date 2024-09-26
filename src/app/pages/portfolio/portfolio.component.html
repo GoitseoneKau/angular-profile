@@ -1,33 +1,33 @@
-<div class="projects-s flex flex-col items-center justify-center">
-    <h1 class="z-10 text-white -mt-52 sm:-mt-20 w-full text-center">Projects</h1>
-    <div class="slide flex justify-center items-center max-sm:hidden">
-        <div class="image flex justify-center items-center active">
+<div class="projects-s flex flex-col items-center justify-center py-10">
+    <h1 class="z-10 text-white  max-sm:-mt-24 w-full text-center header">Projects</h1>
+    <div #slide class="slide flex justify-center -mb-14 max-sm:-mb-0 items-center max-sm:hidden">
+        <div #sliders class="image flex justify-center items-center active">
             <a title="Sunnyside Web" href="https://sunnyside-agency-landing-7ddf3.web.app/" class="w-full h-full flex justify-center">
                 <img src="assets/images/projects/desktop-preview.jpg" alt="" srcset="" height="10%" width="80%">
             </a>
         </div>
-        <div class="image flex justify-center items-center">
+        <div #sliders class="image flex justify-center items-center">
             <a title="First Portfolio" href="https://goitseonekau.github.io/Portfolio/" class="w-full h-full flex justify-center">
                 <img src="assets/images/projects/Capture.jpg" alt="" srcset="" height="500px" width="80%">
             </a>
         </div>
-        <div class="image flex justify-center items-center">
+        <div #sliders class="image flex justify-center items-center">
             <a title="Memory Game" href="https://memorygame-25d86.web.app/" class="w-full h-full flex justify-center">
             <img src="assets/images/projects/memory game.png" alt="" srcset="" height="400px" width="80%">
             </a>
         </div>
-        <div class="image flex justify-center items-center ">
+        <div #sliders class="image flex justify-center items-center ">
             <h2 class="text-white text-center w-full">Coming Soon</h2>
         </div>
-        <div class="image flex justify-center items-center">
+        <div #sliders class="image flex justify-center items-center">
             <h2 class=" text-center w-full text-yellow-600">Coming Soon</h2>
         </div>
-        <button title="b" id="left" class="left-arrow"><i class="fa-solid fa-chevron-left fa-1x" aria-hidden="true"></i></button>
-        <button title="c" id="right" class="right-arrow"><i class="fa-solid fa-chevron-right  fa-1x" aria-hidden="true"></i></button>
+        <button (click)="previous()" title="b" #left class="left-arrow"><i class="fa-solid fa-chevron-left fa-1x" aria-hidden="true"></i></button>
+        <button (click)="next()" title="c" #right class="right-arrow"><i class="fa-solid fa-chevron-right  fa-1x" aria-hidden="true"></i></button>
     </div>
 
 
-    <div class="list-projects sm:hidden z-10">
+    <div class="list-projects sm:hidden mb-14 z-10">
         <div class="flex justify-center items-center p-3">
             <h5 class="w-3/5 text-center text-white px-5 text-xl">Sunnyside Agency</h5>
             <a title="Sunnyside Web" href="https://sunnyside-agency-landing-7ddf3.web.app/" class="w-full h-full flex justify-center">
@@ -52,12 +52,5 @@
                 <h4 class="text-white text-center w-1/2">Coming Soon</h4>
             </div>
         </div>
-        <!--
-        <div class=" flex justify-center items-center p-3">
-            <h5 class="w-3/5 text-center text-white px-5 text-xl">Sunnyside Agency</h5>
-            <div class="bg-black h-32 flex justify-center items-center w-full ">
-                <h4 class="text-white text-center w-1/2">Coming Soon</h4>
-            </div>
-        </div> -->
     </div>
 </div>

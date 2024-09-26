@@ -90,7 +90,7 @@ label{
     color: rgb(221, 221, 221);
 }
 
-input[type=text], input[type=email], select, textarea {
+input[type=text], input[type=email], textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ffffff;
@@ -99,7 +99,19 @@ input[type=text], input[type=email], select, textarea {
   resize: vertical;
   color: white;
 }
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
 
+  resize: vertical;
+  color: white;
+}
+.holderError::placeholder{
+  color: #a94442;
+  font-style: normal;
+}
 input::placeholder, select::placeholder, textarea::placeholder {
     color: goldenrod;
     font-style: normal;
@@ -119,12 +131,27 @@ input[type=submit]{
  margin: 0 auto;
 }
 
+
 input[type=submit]:hover {
   background-color: #ffffff;
   color: goldenrod;
 }
 
+input[type=submit]:disabled {
+  background-color: #97929248;
+  color: black;
+  cursor: not-allowed;
+ }
+
 .contact-details{
     width: 40%;
     background-color: #54545477;
+}
+
+/* border: 2px solid #42A948; green */
+.ng-valid[required], .ng-valid.required  {
+  border: 2px solid goldenrod; /* gold */
+}
+.ng-invalid:not(form)  {
+  border: 2px solid #a94442; /* red */
 }

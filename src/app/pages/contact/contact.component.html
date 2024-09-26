@@ -10,35 +10,102 @@
     </div>
 <div class="form-sec z-10 px-10 snap-start snap-always">
     <h2 class="text-white font-Avenir p-3 w-full md:w-3/4 text-center text-6xl md:text-8xl lg:text-5xl">Let's Get Your Details</h2>
-    <form method="POST" action={{action}} onsubmit="submitForm(event)" id="contactForm" class="w-2/3 max-sm:w-11/12 md:w-2/3 lg:w-2/3" >
+
+    <form #myForm="ngForm"  (ngSubmit)="onSubmit(myForm)" class="w-2/3 max-sm:w-11/12 md:w-2/3 lg:w-2/3" >
         <div class="form-group"> 
             <label for="fname">First Name :</label>
-            <input type="text" id="fname" name="firstname"  placeholder="Your name.." >
+            <input type="text" id="fname" name="firstname"  
+            [class.holderError]="firstname.touched"  
+            [class.ng-invalid]="firstname.touched"
+            (ngModelChange)="Validate($event,firstname)"
+            [(ngModel)]="data.firstname" minlength="3"
+            #firstname="ngModel" placeholder="Your name.."  required>
+            @if(firstname.invalid && (firstname.dirty || firstname.touched)){
+                <div class="alert">
+                    <div *ngIf="firstname.hasError('required')" class="text-red-600">
+                        Name is required.
+                    </div>
+                    <div *ngIf="firstname.hasError('minlength')" class="text-red-600">
+                        Name must be atleast 3 characters long or more.
+                    </div>
+                </div>
+            }
+            
         </div>
-        <br>
+     
         <div class="form-group">
             <label for="lname">Last Name :</label>
-            <input type="text" id="lname" name="lastname"  placeholder="Your last name..">
+            <input type="text" id="lname" name="lastname"
+            [class.holderError]="lastname.touched"  
+            [class.ng-invalid]="lastname.touched"
+            (ngModelChange)="Validate($event,lastname)"
+            [(ngModel)]="data.lastname" minlength="3" 
+            #lastname="ngModel"   placeholder="Your last name.." 
+            required>
+            @if(lastname.invalid && (lastname.dirty || lastname.touched)){
+                <div class="alert">
+                    <div *ngIf="lastname.hasError('required')" class="text-red-600">
+                        Last name is required.
+                    </div>
+                    <div *ngIf="firstname.hasError('minlength')" class="text-red-600">
+                        Last name must be atleast 3 characters long or more.
+                    </div>
+                </div>
+            }
         </div>
-        <br>
+     
         <div class="form-group">
             <label for="email">Email :</label>
-            <input type="email" id="email" name="email" placeholder="example@domain.com" >
+            <input type="email" id="email" name="email"
+            [class.holderError]="email.touched"
+            [class.ng-invalid]="email.touched"
+             pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"  
+             (ngModelChange)="Validate($event,email)"
+            [(ngModel)]="data.email" #email="ngModel"  
+            placeholder="example@domain.com" required email>
+            @if(email.invalid && (email.dirty || email.touched)){
+                <div class="alert">
+                    <div *ngIf="email.hasError('required')" class="text-red-600">
+                        email is required
+                    </div>
+                    <div *ngIf="email.hasError('pattern')" class="text-red-600">
+                        only valid email can be entered
+                    </div>
+                </div>
+            }
         </div>
-        <br>
+   
         <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="Message" placeholder="Your message.." ></textarea>
+            <textarea id="message" name="Message" 
+            [class.holderError]="message.touched"
+            [class.ng-invalid]="message.touched"
+            minlength="80"  
+            (ngModelChange)="Validate($event,message)"
+            [(ngModel)]="data.message" #message="ngModel"  placeholder="Your message.." required>
+            </textarea>
+            @if(message.invalid && (message.dirty || message.touched)){
+                <div class="alert">
+                    <div *ngIf="message.hasError('required')" class="text-red-600">
+                        message is required
+                    </div>
+                    <div *ngIf="firstname.hasError('minlength')" class="text-red-600">
+                       What you'd like should be atleast 80 or more characters 
+                    </div>
+                </div>
+            }
         </div>
         <br>
-       
+       <p *ngIf="clientMessage.length>0" 
+        class="text-yellow-600 text-center font-Avenir text-3xl">
+        {{clientMessage}}
+       </p>
         <div class=" flex justify-center items-center p-5 w-2/3 sm:w-1/2">
-            <input class="font-bold w-full" type="submit" id="submit" value="Submit">
+            <input [disabled]="!myForm.control.valid"   class="font-bold w-full" type="submit" id="submit" value="Submit">
     
         </div>
     </form>
      
 </div>
 </div>
-
 

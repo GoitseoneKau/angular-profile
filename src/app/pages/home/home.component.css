@@ -56,13 +56,16 @@
 
 
 
-
 h1{
     font-family: 'Avenir Next Condensed';
     cursor:none;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+}
+
+h3{
+    font-size: 4em;
 }
 
 div.image{
@@ -84,4 +87,25 @@ div.image{
     100%{opacity: 0;}   
 }
 
-/* font to check : Avenir Next Condensed */
+.fa-2xl{
+    font-size: 6em;
+}
+.my-2xl{
+    font-size: 3em;
+}
+
+.brand{
+    height: 8em;
+    width: 8em;
+    padding: 5px 15px;
+}
+
+.noDisplay{
+display: none;
+}
+
+@media screen and (min-width:640px) {
+    .scrollBtn{
+        display: none;
+    }
+}

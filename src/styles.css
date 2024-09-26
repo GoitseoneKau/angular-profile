@@ -11,6 +11,10 @@
 
 
 /*custom css*/
+
+.font-Avenir{
+  font-family: 'Avenir Next Condensed';
+}
 .custom-bg{
   /* background-color: #f2e1d0; */
   background-color: #000000c0;
